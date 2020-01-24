@@ -3,31 +3,31 @@ version: '3.4'
 services:
   dev:
     image: node:12-alpine
-    container_name: bq-api-node
+    container_name: burgerqueen_api_dev
     command:  npm run dev
     working_dir: /app
     ports:
-      - "3000:3000"
+      - "3000"
     volumes:
       - ./:/app:cached
     networks:
-      - bq-network
+      - burgerqueen-network
     depends_on:
       - db
 
   db:
     image: postgres
-    container_name: bq-api-node_db
+    container_name: burgerqueen_db
     ports:
-      - "5432:5432"
+      - "5432"
     volumes:
       - database:/var/lib/postgresql/data
     networks:
-      - bq-network
+      - burgerqueen-network
 
 volumes:
   database:
 
 networks:
-  bq-network:
+  burgerqueen-network:
     driver: bridge
