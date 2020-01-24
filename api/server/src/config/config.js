@@ -1,15 +1,15 @@
 module.exports = {
   "development": {
     "username": "postgres",
-    "password": apassword,
+    "password": "apassword",
     "database": "burgerqueen_development",
     "host": "db",
     "dialect": "postgres",
-    "operatorsAliases": false
+    
   },
   "test": {
     "username": "postgres",
-    "password": null,
+    "password": "apassword",
     "database": "burgerqueen_test",
     "host": "db",
     "dialect": "postgres",
@@ -17,7 +17,7 @@ module.exports = {
   },
   "production": {
     "username": "postgres",
-    "password": null,
+    "password": "apassword",
     "database": "burgerqueen_production",
     "host": "db",
     "dialect": "postgres",

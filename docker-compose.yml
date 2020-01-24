@@ -4,7 +4,7 @@ services:
   dev:
     image: node:12-alpine
     container_name: burgerqueen_api_dev
-    command:  sh -c "npm run migrate && npm run dev"
+    command:  npm run dev
     working_dir: /app
     ports:
       - "3000"
@@ -15,16 +15,19 @@ services:
     depends_on:
       - db
 
-  test:
-    image: node:12-alpine
-    container_name: burgerqueen_api_test
-    command:  sh -c "npm run migrate && npm run test"
-    working_dir: /app
+  db:
+    image: postgres
+    container_name: burgerqueen_db
     ports:
-    - "3001:3000"
+      - "5432"
     volumes:
-    - ./:/app:cached
+      - database:/var/lib/postgresql/data
     networks:
-    - burgerqueen-network
-    depends_on:
-    - db
+      - burgerqueen-network
+
+volumes:
+  database:
+
+networks:
+  burgerqueen-network:
+    driver: bridge
