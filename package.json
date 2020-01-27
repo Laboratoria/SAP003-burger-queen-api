@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "migrate": "npx sequelize-cli db:migrate",
     "test": "jest",
     "dev": "nodemon  --exec babel-node ./api/index.js"
   },
