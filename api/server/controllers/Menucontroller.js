@@ -20,8 +20,8 @@ class MenuController {
   }
 
   static async addMenu(req, res) {
-    console.log(req.body.name, req.body.is_alive)
-    if (!req.body.name || !req.body.is_alive ) {
+    console.log(req.body.name, req.body.value, req.body.category, req.body.drink)
+    if (!req.body.name || !req.body.value || !req.body.category || !req.body.drink) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }

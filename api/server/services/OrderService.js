@@ -1,7 +1,7 @@
 import database from '../src/models'
 
-class OrdersService {
-  static async getAllOrderss() {
+class OrderService {
+  static async getAllOrders() {
     try {
       return await database.Orders.findAll()
     } catch (error) {
@@ -63,4 +63,4 @@ class OrdersService {
   }
 }
 
-export default OrdersService
+export default OrderService
