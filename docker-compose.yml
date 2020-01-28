@@ -3,8 +3,8 @@ version: '3.4'
 services:
   dev:
     image: node:12-alpine
-    container_name: bq-api-node
-    command:  npm run dev
+    container_name: bq_api_dev
+    command:  sh -c "npm run migrate && npm run dev"
     working_dir: /app
     ports:
       - "3000:3000"
@@ -15,9 +15,23 @@ services:
     depends_on:
       - db
 
+  # test:
+  #   image: node:12-alpine
+  #   container_name: bq_api_test
+  #   command: sh -c "npm run migrate && npm run test"
+  #   working_dir: /app
+  #   ports:
+  #     - "3001:3000"
+  #   volumes:
+  #     - ./:/app:cached
+  #   networks:
+  #     - store-network
+  #   depends_on:
+  #     - db
+
   db:
     image: postgres
-    container_name: bq-api-node_db
+    container_name: bq_api_node_db
     ports:
       - "5432:5432"
     volumes:
