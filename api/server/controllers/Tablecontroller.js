@@ -5,6 +5,7 @@ const util = new Util();
 
 class TableController {
   static async getAllTable(req, res) {
+    console.log('oi Aline!!')
     try {
       const allTable = await TableService.getAllTable()
       if (allTable.length > 0) {

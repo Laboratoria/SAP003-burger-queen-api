@@ -20,7 +20,7 @@ class OrderController {
   }
 
   static async addOrder(req, res) {
-    if (!req.body.tableId || !req.body.statusOrder) {
+    if (!req.body.TableId || !req.body.statusOrder) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }

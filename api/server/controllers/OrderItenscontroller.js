@@ -20,16 +20,17 @@ class OrderItensController {
   }
 
   static async addOrderItens(req, res) {
-    if (!req.body.productId || !req.body.orderId || !req.body.statusItem) {
+    if (!req.body.ProductId || !req.body.OrderId || !req.body.statusItem) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }
     const newOrderItens = req.body
     try {
       const createdOrderItens = await OrderItensService.addOrderItens(newOrderItens)
-      util.setSuccess(201, 'OrderItensService Added!', createdOrderItens)
+      util.setSuccess(201, 'OrderItens Added!', createdOrderItens)
       return util.send(res)
     } catch (error) {
+      console.log('SOS MALIBU')
       util.setError(400, error.message)
       return util.send(res)
     }
@@ -45,9 +46,9 @@ class OrderItensController {
     try {
       const updateOrderItens = await OrderItensService.updateOrderItens(id, alteredOrderItens)
       if (!updateOrderItens) {
-        util.setError(404, `Cannot find OrderItensService with the id: ${id}`)
+        util.setError(404, `Cannot find OrderItens with the id: ${id}`)
       } else {
-        util.setSuccess(200, 'OrderItensService updated', updateOrderItens)
+        util.setSuccess(200, 'OrderItens updated', updateOrderItens)
       }
       return util.send(res)
     } catch (error) {
@@ -68,9 +69,9 @@ class OrderItensController {
       const theOrderItens = await OrderItensService.getOrderItens(id)
 
       if (!theOrderItens) {
-        util.setError(404, `Cannot find OrderItensService with the id ${id}`)
+        util.setError(404, `Cannot find OrderItens with the id ${id}`)
       } else {
-        util.setSuccess(200, 'Found OrderItensService', theOrderItens)
+        util.setSuccess(200, 'Found OrderItens', theOrderItens)
       }
       return util.send(res)
     } catch (error) {

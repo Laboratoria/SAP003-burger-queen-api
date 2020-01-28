@@ -5,7 +5,7 @@ module.exports = {
     "database": "bqBeerDevelopment",
     "host": "db",
     "dialect": "postgres",
-    "operatorsAliases": false
+    // "operatorsAliases": false
   },
   "test": {
     "username": "postgres",
@@ -13,7 +13,7 @@ module.exports = {
     "database": "bqBeerTest",
     "host": "db",
     "dialect": "postgres",
-    "operatorsAliases": false
+    // "operatorsAliases": false
   },
   "production": {
     "username": "postgres",
@@ -21,6 +21,6 @@ module.exports = {
     "database": "bqBeerProduction",
     "host": "db",
     "dialect": "postgres",
-    "operatorsAliases": false
+    // "operatorsAliases": false
   }
 }
