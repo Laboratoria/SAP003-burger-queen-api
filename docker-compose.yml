@@ -3,7 +3,7 @@ version: '3.4'
 services:
   dev:
     image: node:12-alpine
-    container_name: bq-api-node
+    container_name: bq_api
     command:  npm run dev
     working_dir: /app
     ports:
@@ -17,13 +17,27 @@ services:
 
   db:
     image: postgres
-    container_name: bq-api-node_db
+    container_name: burger_queen_api
     ports:
       - "5432:5432"
     volumes:
       - database:/var/lib/postgresql/data
     networks:
       - bq-network
+
+  #  test:
+  #   image: node:12-alpine
+  #   container_name: burger_queen_test
+  #   command:  sh -c "npm run migrate && npm run test"
+  #   working_dir: /app
+  #   ports:
+  #     - "3001:3000"
+  #   volumes:
+  #     - ./:/app:cached
+  #   networks:
+  #     - bq-network
+  #   depends_on:
+  #     - db
 
 volumes:
   database:
