@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Order.associate = function (models) {
     Order.hasMany(models.OrderItens);
-    Order.hasOne(models.Table);
+    Order.belongsTo(models.Table);
   };
   return Order;
 };
