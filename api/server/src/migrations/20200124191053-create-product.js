@@ -14,7 +14,7 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      is_alcoholic: {
+      isAlcoholic: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {

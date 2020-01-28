@@ -1,60 +1,59 @@
-import database from '../src/models'
+import database from '../src/models';
 
-class AuthorService {
-  static async getAllAuthors() {
+class OrderService {
+  static async getAllOrder() {
     try {
-      return await database.Author.findAll()
+      return await database.Order.findAll()
     } catch (error) {
       throw error
     }
   }
 
-  static async addAuthor(newAuthor) {
+  static async addOrder(newOrder) {
     try {
-      return await database.Author.create(newAuthor)
+      return await database.Order.create(newOrder)
     } catch (error) {
       throw error
     }
   }
 
-  static async updateAuthor(id, updateAuthor) {
+  static async updateOrder(id, updateOrder) {
     try {
-      const authorToUpdate = await database.Author.findOne({
+      const orderToUpdate = await database.Order.findOne({
         where: { id: Number(id) }
       })
 
-      if (authorToUpdate) {
-        await database.Author.update(updateAuthor, { where: { id: Number(id) } })
-
-        return updateAuthor
+      if (orderToUpdate) {
+        await database.Order.update(updateOrder, { where: { id: Number(id) } })
+        return updateOrder;
       }
-      return null
+      return null;
     } catch (error) {
       throw error
     }
   }
 
-  static async getAuthor(id) {
+  static async getOrder(id) {
     try {
-      const theAuthor = await database.Author.findOne({
+      const theOrder = await database.Order.findOne({
         where: { id: Number(id) }
       })
 
-      return theAuthor
+      return theOrder;
     } catch (error) {
       throw error
     }
   }
 
-  static async deleteAuthor(id) {
+  static async deleteOrder(id) {
     try {
-      const authorToDelete = await database.Author.findOne({ where: { id: Number(id) } })
+      const orderToDelete = await database.Order.findOne({ where: { id: Number(id) } })
 
-      if (authorToDelete) {
-        const deletedAuthor = await database.Author.destroy({
+      if (orderToDelete) {
+        const deletedOrder = await database.Order.destroy({
           where: { id: Number(id) }
         })
-        return deletedAuthor
+        return deletedOrder;
       }
       return null
     } catch (error) {
@@ -63,4 +62,4 @@ class AuthorService {
   }
 }
 
-export default AuthorService
+export default OrderService;

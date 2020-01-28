@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "postgres",
     "password": null,
-    "database": "bq_beer_development",
+    "database": "bqBeerDevelopment",
     "host": "db",
     "dialect": "postgres",
     "operatorsAliases": false
@@ -10,7 +10,7 @@ module.exports = {
   "test": {
     "username": "postgres",
     "password": null,
-    "database": "bq_beer_test",
+    "database": "bqBeerTest",
     "host": "db",
     "dialect": "postgres",
     "operatorsAliases": false
@@ -18,7 +18,7 @@ module.exports = {
   "production": {
     "username": "postgres",
     "password": null,
-    "database": "bqs_beer_production",
+    "database": "bqBeerProduction",
     "host": "db",
     "dialect": "postgres",
     "operatorsAliases": false

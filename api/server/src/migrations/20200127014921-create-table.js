@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      table_number: {
+      tableNumber: {
         type: Sequelize.INTEGER
       },
       createdAt: {
