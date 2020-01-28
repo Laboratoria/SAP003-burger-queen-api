@@ -25,19 +25,19 @@ services:
     networks:
       - bq-network
 
-  #  test:
-  #   image: node:12-alpine
-  #   container_name: burger_queen_test
-  #   command:  sh -c "npm run migrate && npm run test"
-  #   working_dir: /app
-  #   ports:
-  #     - "3001:3000"
-  #   volumes:
-  #     - ./:/app:cached
-  #   networks:
-  #     - bq-network
-  #   depends_on:
-  #     - db
+  test:
+    image: node:12-alpine
+    container_name: burger_queen_test
+    command:  npm run test
+    working_dir: /app
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./:/app:cached
+    networks:
+      - bq-network
+    depends_on:
+      - db
 
 volumes:
   database:
