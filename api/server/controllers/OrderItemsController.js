@@ -20,7 +20,7 @@ class OrderItemsController {
   }
 
   static async addOrderItems(req, res) {
-    if (!req.body.productId || !req.body.orderId || !req.body.options || !req.body.qtd || !req.body.extraId) {
+    if (!req.body.ProductId || !req.body.OrderId || !req.body.options || !req.body.qdt || !req.body.ExtrasId) {
       util.setError(400, 'Please provide complete details')
       return util.send(res)
     }
@@ -88,7 +88,7 @@ class OrderItemsController {
     }
 
     try {
-      const orderItemsToDelete = await OrderItemsService.deleteOrderItemsItems(id)
+      const orderItemsToDelete = await OrderItemsService.deleteOrderItems(id)
 
       if (orderItemsToDelete) {
         util.setSuccess(200, 'OrderItems deleted')

@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000
 
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
-app.use('/api/tables', orderItemsRoutes);
+app.use('/api/order-items', orderItemsRoutes);
 
 app.get('*', (req, res) => res.status(200).send({
    message: 'Esta é a API da nossa hamburgueria.'

@@ -15,11 +15,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       status: {
-        type: Sequelize.BOOLEAN
-      },
-      product_id: {
-        type: Sequelize.INTEGER,
-        //references: {model:'Products', key:'id'}
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -60,9 +60,9 @@ describe('Testing the product endpoints:', () => {
   })
 
   it('It should get a particular product', (done) => {
-    const productIdtest = 1
+    const productId = 1
     chai.request(app)
-      .get(`/api/products/${productIdtest}`)
+      .get(`/api/products/${productId}`)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(200)

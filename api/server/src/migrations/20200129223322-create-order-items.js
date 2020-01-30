@@ -8,14 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      productId: {
-        type: Sequelize.INTEGER
+      ProductId: {
+        type: Sequelize.INTEGER,
+        references: {model:'Products', key:'id'}
       },
-      orderId: {
-        type: Sequelize.INTEGER
+      OrderId: {
+        type: Sequelize.INTEGER,
+        references: {model:'Orders', key:'id'}
       },
-      extrasId: {
-        type: Sequelize.INTEGER
+      ExtrasId: {
+        type: Sequelize.INTEGER,
+        references: {model:'Products', key:'id'}
       },
       qdt: {
         type: Sequelize.INTEGER
