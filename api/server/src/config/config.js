@@ -18,7 +18,7 @@ module.exports = {
   "production": {
     "username": "postgres",
     "password": null,
-    "database": "new_store_production",
+    "database": "burger_queen_production",
     "host": "db",
     "dialect": "postgres",
     "operatorsAliases": false
