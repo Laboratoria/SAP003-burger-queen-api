@@ -60,6 +60,74 @@ class OrderService {
       throw error
     }
   }
+
+  static async getOrderItens(id) {
+    try {
+      const theItens = await database.OrderItens.findAll({
+        where: { OrderId: Number(id) }
+      })
+      return theItens;
+    } catch (error) {
+      throw error
+    }
+  }
+
+  static async getAllOrdersItens() {
+    try {
+      return await database.OrderItens.findAll()
+    } catch (error) {
+      throw error
+    }
+  }
+
+  static async getOrderItem(id) {
+    try {
+      const theOrderItem = await database.OrderItens.findOne({
+        where: { id: Number(id) }
+      })
+      return theOrderItem;
+    } catch (error) {
+      throw error
+    }
+  }
+
+  static async addOrderItens(newOrderItem) {
+    try {
+      return await database.OrderItens.create(newOrderItem)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  static async updateOrderItem(id, updateOrderItem) {
+    try {
+      const itemToUpdate = await database.OrderItens.findOne({
+        where: { id: Number(id) }
+      })
+      if (itemToUpdate) {
+        await database.OrderItens.update(updateOrderItem, { where: { id: Number(id) } })
+        return updateOrderItem;
+      }
+      return null;
+    } catch (error) {
+      throw error
+    }
+  }
+
+  static async deleteOrderItem(id) {
+    try {
+      const itemToDelete = await database.OrderItens.findOne({ where: { id: Number(id) } })
+      if (itemToDelete) {
+        const deletedOrderItem = await database.OrderItens.destroy({
+          where: { id: Number(id) }
+        })
+        return deletedOrderItem;
+      }
+      return null
+    } catch (error) {
+      throw error
+    }
+  }
 }
 
 export default OrderService;

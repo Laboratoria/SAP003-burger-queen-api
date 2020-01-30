@@ -5,7 +5,6 @@ const util = new Util();
 
 class TableController {
   static async getAllTable(req, res) {
-    console.log('oi Aline!!')
     try {
       const allTable = await TableService.getAllTable()
       if (allTable.length > 0) {
@@ -69,13 +68,13 @@ class TableController {
       const theTable = await TableService.getTable(id)
 
       if (!theTable) {
-        util.setError(404, `Cannot find Table with the id ${id}`)
+        util.setError(404, `Cannot find Table with the id ${id}`);
       } else {
-        util.setSuccess(200, 'Found Table', theTable)
+        util.setSuccess(200, 'Found Table', theTable);
       }
       return util.send(res)
     } catch (error) {
-      util.setError(404, error)
+      util.setError(404, error);
       return util.send(res)
     }
   }
@@ -84,7 +83,7 @@ class TableController {
     const { id } = req.params
 
     if (!Number(id)) {
-      util.setError(400, 'Please provide a numeric value')
+      util.setError(400, 'Please provide a numeric value');
       return util.send(res)
     }
 
