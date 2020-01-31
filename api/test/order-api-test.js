@@ -15,7 +15,6 @@ describe('Testing the order endpoints:', () => {
       .post('/api/table')
       .send(table)
       .end(() => {
-
         const order = {
           TableId: 1,
           statusOrder: 'pendente'
