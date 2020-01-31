@@ -6,7 +6,7 @@ chai.use(chatHttp)
 const { expect } = chai
 
 describe('Testing the order endpoints:', () => {
-  it('It should create a order', (done) => {
+  it('It should create an order', (done) => {
     const order = {
       client_name: 'First Awesome order',
       table_number: 5,
@@ -28,7 +28,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should not create a order with incomplete parameters', (done) => {
+  it('It should not create an order with incomplete parameters', (done) => {
     const order = {
       status: "Concluído"
     }
@@ -97,7 +97,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should update a order', (done) => {
+  it('It should update an order', (done) => {
     const orderId = 1
     const updatedOrder = {
       id: orderId,
@@ -119,7 +119,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should not update a order with invalid id', (done) => {
+  it('It should not update an order with invalid id', (done) => {
     const orderId = '9999'
     const updatedOrder = {
       id: orderId,
@@ -139,7 +139,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should not update a order with non-numeric id value', (done) => {
+  it('It should not update an order with non-numeric id value', (done) => {
     const orderId = 'ggg'
     const updatedOrder = {
       id: orderId,
@@ -160,7 +160,7 @@ describe('Testing the order endpoints:', () => {
   })
 
 
-  it('It should delete a order', (done) => {
+  it('It should delete an order', (done) => {
     const orderId = 1
     chai.request(app)
       .delete(`/api/orders/${orderId}`)
@@ -172,7 +172,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should not delete a order with invalid id', (done) => {
+  it('It should not delete an order with invalid id', (done) => {
     const orderId = 777
     chai.request(app)
       .delete(`/api/orders/${orderId}`)
@@ -185,7 +185,7 @@ describe('Testing the order endpoints:', () => {
       })
   })
 
-  it('It should not delete a order with non-numeric id', (done) => {
+  it('It should not delete an order with non-numeric id', (done) => {
     const orderId = 'bbb'
     chai.request(app)
       .delete(`/api/orders/${orderId}`)

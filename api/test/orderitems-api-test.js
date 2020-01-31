@@ -31,7 +31,7 @@ const orderItem = {
 
 describe('Testing the order item endpoints:', () => {
 
-  it('It should create a order item', (done) => {
+  it('It should create an order item', (done) => {
     chai.request(app)
       .post('/api/products')
       .set('Accept', 'application/json')
@@ -65,7 +65,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-  it('It should not create a order item with incomplete parameters', (done) => {
+  it('It should not create an order item with incomplete parameters', (done) => {
     const orderItem = {
       ProductId: 2,
     }
@@ -138,7 +138,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-  it('It should update a order item', (done) => {
+  it('It should update an order item', (done) => {
     const orderItemId = 1
     const updatedOrderItem = {
       id: orderItemId,
@@ -164,7 +164,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-  it('It should not update a order item with invalid id', (done) => {
+  it('It should not update an order item with invalid id', (done) => {
     const orderItemId = 9999
     const updatedOrderItem = {
       id: orderItemId,
@@ -187,7 +187,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-    it('It should not update a order item with non-numeric id value', (done) => {
+    it('It should not update an order item with non-numeric id value', (done) => {
     const orderItemId = 'ggg'
     const updatedOrderItem = {
       id: orderItemId,
@@ -209,7 +209,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-    it('It should delete a order item', (done) => {
+    it('It should delete an order item', (done) => {
     const orderItemId = 1
     chai.request(app)
       .delete(`/api/order-items/${orderItemId}`)
@@ -221,7 +221,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-    it('It should not delete a order item with invalid id', (done) => {
+    it('It should not delete an order item with invalid id', (done) => {
     const orderItemId = 777
     chai.request(app)
       .delete(`/api/order-items/${orderItemId}`)
@@ -234,7 +234,7 @@ describe('Testing the order item endpoints:', () => {
       })
   })
 
-    it('It should not delete a order item with non-numeric id', (done) => {
+    it('It should not delete an order item with non-numeric id', (done) => {
     const orderItemId = 'bbb'
     chai.request(app)
       .delete(`/api/order-items/${orderItemId}`)
