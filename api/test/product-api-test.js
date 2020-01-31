@@ -160,7 +160,7 @@ describe('Testing the product endpoints:', () => {
       .end((err, res) => {
         expect(res.status).to.equal(400)
         res.body.should.have.property('message')
-                            .eql('Please input a valid numeric value')
+          .eql('Please input a valid numeric value')
         done()
       })
   })
@@ -186,7 +186,7 @@ describe('Testing the product endpoints:', () => {
       .end((err, res) => {
         expect(res.status).to.equal(404)
         res.body.should.have.property('message')
-                            .eql(`Product with the id ${productId} cannot be found`)
+          .eql(`Product with the id ${productId} cannot be found`)
         done()
       })
   })
